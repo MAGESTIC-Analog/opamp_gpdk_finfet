@@ -1,0 +1,40 @@
+;; Set right snap settings for Advanced Nodes
+envSetVal( "layout" "xSnapSpacing" 'float 0.001 )
+envSetVal( "layout" "ySnapSpacing" 'float 0.001 )
+
+;; Open to full depth 
+envSetVal( "layout" "stopLevel" 'int 32 ) 
+
+;; Enable dimming 
+envSetVal( "layout" "dimmingOn" 'boolean t ) 
+
+;; Enable MPT mode in Palette 
+envSetVal( "layout" "pteMPTMode" 'boolean t )
+
+;; Set Palette Mode to compact 
+envSetVal( "layout" "pteCompactMPT" 'boolean t )
+
+;; Disable WSP display by default
+envSetVal( "layout" "pteInfraDefValueObjGrids" 'string "Snap_Patterns nil" ) 
+
+;; Set Wire Editor Snapping Mode to WSP Pattern 
+envSetVal( "layout" "snapWireGrid" 'cyclic "Snap Pattern" ) 
+
+;; EAD settings for connectivity 
+envSetVal( "layoutEAD" "extractConnectivity" 'cyclic "none" )
+envSetVal( "layoutEAD" "stampNullNetTiles" 'boolean t )
+
+;; EAD settings for Advanced Nodes, for FinFET devices
+envSetVal( "layoutEAD.solver" "modelNonGateFormingPolyCap" 'boolean t )
+envSetVal( "layoutEAD.solver" "modelViaCapacitanceEffect" 'boolean t )
+envSetVal( "layoutEAD.solver" "finWidth" 'float 0.014 )
+envSetVal( "layoutEAD.solver" "finSpacing" 'float 0.034 )
+envSetVal( "layoutEAD.solver" "includePolyFringingCap" 'boolean t ) 
+
+envSetVal( "ei.dataSet" "storeRelativePaths" 'boolean t )
+envSetVal( "layoutEAD.gui" "emResultsShowAllResistors" 'boolean t ) 
+
+load(strcat(getShellEnvVar("CDS_FF_MPT_HOME") "/cds_ff_mpt/libInit.il"))
+
+envSetVal("layout" "drmSuppressSaveDialogBox" 'boolean t)	
+drLoadDrf(strcat(getShellEnvVar("CDS_FF_MPT_HOME") "/display.drf"))

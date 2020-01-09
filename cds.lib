@@ -1,0 +1,11 @@
+
+DEFINE basic $(compute:THIS_TOOL_INST_ROOT)/tools/dfII/etc/cdslib/basic
+DEFINE analogLib $(compute:THIS_TOOL_INST_ROOT)/tools/dfII//etc/cdslib/artist/analogLib
+DEFINE sample $(compute:THIS_TOOL_INST_ROOT)/tools/dfII/samples/cdslib/sample
+DEFINE sheets $(compute:THIS_TOOL_INST_ROOT)/tools/dfII/etc/cdslib/sheets/US_8ths
+DEFINE cdsDefTechLib $(compute:THIS_TOOL_INST_ROOT)/tools/dfII/etc/cdsDefTechLib
+
+DEFINE cds_ff_mpt $CDS_FF_MPT_HOME/cds_ff_mpt
+DEFINE wsp_cds_ff_mpt $CDS_FF_MPT_HOME/wsp_cds_ff_mpt
+
+DEFINE Two_Stage_OpAmp ./Two_Stage_OpAmp
